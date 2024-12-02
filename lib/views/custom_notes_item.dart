@@ -27,7 +27,7 @@ class NoteItem extends StatelessWidget {
             trailing: Icon(
               FontAwesomeIcons.trash,
               color: Colors.black,
-              size: 24,
+              size: 28,
             ),
           ),
           Padding(

@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../constans.dart';
+import '../../constans.dart';
+
 
 class CustomBottom extends StatelessWidget {
   const CustomBottom({super.key,  required this.ontap});

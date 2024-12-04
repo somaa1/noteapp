@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
 
-import '../constans.dart';
+import '../../constans.dart';
 
 class CustomTextFiled extends StatelessWidget {
-  const CustomTextFiled({super.key, required this.hint,  this.maxLines=1});
+  const CustomTextFiled({super.key, required this.hint,  this.maxLines=1, this.onsaved});
 final String hint;
 final int maxLines;
-
+final void Function(String?)? onsaved;
   @override
   Widget build(BuildContext context) {
-    return  TextField(
+    return  TextFormField(
+      onSaved:onsaved ,
+      validator: (value) {
+        if (value?.isEmpty ?? true){
+          return "Please fill this field";
+        }else{
+          return null;  // No validation errors
+        }
+      },
       maxLines:maxLines ,
       decoration:InputDecoration(
         border: buildBorder(),
         enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(color:KprimeColor),
+        focusedBorder: buildBorder(color:kPrimeColor),
         hintText: hint,
      //   hintStyle: TextStyle(color: KprimeColor),
 

@@ -5,8 +5,9 @@ import '../../constans.dart';
 
 
 class CustomBottom extends StatelessWidget {
-  const CustomBottom({super.key,  required this.ontap});
+  const CustomBottom({super.key,  required this.ontap,  this.isloading=false});
 final void Function()? ontap;
+final bool isloading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,7 +19,13 @@ final void Function()? ontap;
             color: kPrimeColor,
           ),
           child: Center(
-            child: Text(
+            child: isloading ? const SizedBox(
+              height: 25,
+              width: 25,
+              child: CircularProgressIndicator(
+                color: Colors.black,
+              ),
+            ) :const Text(
               'Add',
               style: TextStyle(
                   color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),

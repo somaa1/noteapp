@@ -20,7 +20,7 @@ final bool isloading;
           ),
           child: Center(
             child: isloading ? const SizedBox(
-              height: 25,
+              height: 26,
               width: 25,
               child: CircularProgressIndicator(
                 color: Colors.black,

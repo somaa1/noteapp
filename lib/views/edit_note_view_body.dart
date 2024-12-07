@@ -58,6 +58,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               content = value;
             },
           ),
+          SizedBox(height: 30,),
           EditNoteColorsList(
             note: widget.note,
           )
